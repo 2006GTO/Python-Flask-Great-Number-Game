@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <style>
+        .container{
+            width: 800px;
+            height: auto;
+            margin-top: 100px;
+            margin-left: 100px;
+        }
+
+        .correct{
+            height: 300px;
+            width: 450px;
+            background-color: green;
+        }
+
+        .nailedit{
+            height: 250px;
+            width: 250px;
+            background-color: green;
+            position: relative;
+            left: 110px;
+            color: white;
+        }
+        .toohigh{
+            height: 250px;
+            width: 250px;
+            background-color: red;
+            position: relative;
+            left: 110px;        }
+        .toolow {
+            height: 250px;
+            width: 250px;
+            background-color: red;
+            position: relative;
+            left: 110px;
+        }
+        .title{
+            font-size: 2.2em;
+            text-align: center;
+        }
+        .subtitle{
+            display: block;
+            font-size: 1.75em;
+            text-align: center
+        }
+        .resetbutton{
+            position: relative;
+            top: 230px;
+            left: 30px;
+            z-index: 1;
+        }
+
+        .result {
+            position: relative;
+            left: 150px;
+        }
+        button, input, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            position: relative;
+            display: flex;
+            left: 160px;
+        }
+
+        textarea .textarea{
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            position: relative;
+            display: flex;
+            left: 160px;
+        }
+        form {
+            position: relative;
+        }
+        p {
+            margin: 0 0 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            Welcome to the Great Number Game!!!
+        </div> 
+        <div class="subtitle">
+               I am thinking of a number between 1 and 100      
+                <p>Take a guess!</p> 
+        </div>
+        <div class="result">    
+            <form class="resetbutton" action="/reset" method="post">
+                <button style="{{hide}}" class="submitbutton" type="submit">Play Again!</button>
+            </form>       
+            <form action="/guess" type="hidden" method="post" name="form">
+                <h3 class={{style}}>{{result}}</h3>
+                <textarea  style="{{display}}" class="textarea" name="guess" rows="1" placeholder="example: 50"></textarea>    
+                <button style="{{display}}" class="submitbutton" type="submit">I feel lucky!</button>
+            </form>
+        </div>
+</body>
+</html>
